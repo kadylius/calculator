@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="conpound.css"></script>
+ 
+
+    <style>
+        /* Add your custom styles here */
+        .calculator-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+
+        .heading {
+            font-weight: bold;
+        }
+
+        .currSymbol {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .radio-switch input[type="radio"] {
+            margin-right: 5px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<form method="post" name="form1" id="compoundcalc" accept-charset="iso-8859-1" action="compoundinterestcalculator.php#ScrollTo" onsubmit="return processCalc(this,0);" autocomplete="off">
+    <div id="currencyBox" class="form-group mt-4">
+        <label class="heading">Currency:</label>
+        <div class="radio-switch">
+            <input type="radio" id="radio-one" name="currency" value="dollar" checked>
+            <label for="radio-one">$</label>
+            <input type="radio" id="radio-two" name="currency" value="euro">
+            <label for="radio-two">€</label>
+            <input type="radio" id="radio-three" name="currency" value="pound">
+            <label for="radio-three">£</label>
+            <input type="radio" id="radio-four" name="currency" value="rupee">
+            <label for="radio-four">₹</label>
+            <input type="radio" id="radio-five" name="currency" value="yen">
+            <label for="radio-five">¥</label>
+            <input type="radio" id="radio-six" name="currency" value="none">
+            <label for="radio-six">&nbsp;</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="heading" for="amount">Initial investment:</label>
+        <div class="input-group">
+            <span class="input-group-prepend">
+                <span class="input-group-text currSymbol">$</span>
+            </span>
+            <input type="number" step="any" name="amount" id="amount" value="5000" class="form-control calculatorInput" required inputmode="decimal">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="heading" for="percent">Interest rate:</label>
+        <div class="input-group">
+            <input type="number" step="any" name="percent" id="percent" value="5" class="form-control calculatorShortInput percentIcon" required inputmode="decimal">
+            <select name="percentPeriod" class="form-control select_inline">
+                <option value="daily">daily</option>
+                <option value="weekly">weekly</option>
+                <option value="monthly">monthly</option>
+                <option value="quarterly">quarterly</option>
+                <option value="yearly" selected>yearly</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="heading" for="years">Years:</label>
+        <input type="number" step="any" min="0" max="999" name="years" id="years" value="5" class="form-control calculatorShortInput" inputmode="decimal" placeholder="0">
+    </div>
+
+    <div class="form-group">
+        <label class="heading" for="months">Months:</label>
+        <input type="number" name="months" id="months" class="form-control calculatorShortInput" inputmode="numeric" placeholder="0" onkeydown="if(event.key==='.'){event.preventDefault();}">
+    </div>
+
+    <div class="form-group">
+        <label class="heading" for="calculateinterest">Compound interval:</label>
+        <select name="calculateinterest" id="calculateinterest" required class="form-control">
+            <option value="daily">Daily (365/yr)</option>
+            <option value="daily360">Daily (360/yr)</option>
+            <option value="semiweekly">Semi-Weekly (104/yr)</option>
+            <option value="weekly">Weekly (52/yr)</option>
+            <option value="biweekly">Bi-Weekly (26/yr)</option>
+            <option value="halfmonthly">Semi-Monthly (24/yr)</option>
+            <option value="monthly" selected>Monthly (12/yr)</option>
+            <option value="bimonthly">Bi-Monthly (6/yr)</option>
+            <option value="quarterly">Quarterly (4/yr)</option>
+            <option value="halfyearly">Half-Yearly (2/yr)</option>
+            <option value="yearly">Yearly (1/yr)</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary calculatorButton">Calculate</button>
+</form>
+
+</body>
+</html>

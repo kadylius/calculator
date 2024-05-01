@@ -1,13 +1,137 @@
-<div id="heading-full"><div class="breadcrumb"><a href="https://www.thecalculatorsite.com">home</a> » <a href="https://www.thecalculatorsite.com/finance/">finance calculators</a> » compound interest</div><span id="ezoic-pub-ad-placeholder-165" data-ezadblocked="true"></span><h1>Compound Interest Calculator</h1><div class="addToPhone_btn textButton"><span class="buttonText">Add to phone</span> 📲</div><span class="authorBox"><img src="/images/authors/alastair-hazell-thumb.jpg?ezimgfmt=rs:30x30/rscb28/ngcb28/notWebP" alt="Thumbnail image of Alastair Hazell" width="30" height="30" fetchpriority="low" ezimgfmt="rs rscb28 src ng ngcb28" class=" ezlazyloaded" data-ezsrc="/images/authors/alastair-hazell-thumb.jpg?ezimgfmt=rs:30x30/rscb28/ngcb28/notWebP" ezoid="0.5621060430059914">
-    <span>By <a href="/profiles/alastair-hazell.php">Alastair Hazell</a><span>.</span></span>
-    <span>Reviewed by <a href="/profiles/chris-hindle.php">Chris Hindle</a><span>.</span></span></span>
-    <span id="scrollTop"></span><span id="ezoic-pub-ad-placeholder-112" class="tcsAd"></span><span data-ez-ph-id="112" 
-    style="padding-top:5px!important;padding-bottom:5px!important;min-width:728px;max-width:100%!important;margin-left:auto!important;display:block!important;min-height:120px;line-height:0;float:none!important;text-align:center!important;margin-right:auto!important"><span class="ezoic-ad ezoic-at-0 box-2 box-2112 adtester-container adtester-container-112" 
-    data-ez-name="thecalculatorsite_com-box-2"><span id="div-gpt-ad-thecalculatorsite_com-box-2-0" ezaw="728" ezah="90" 
-    style="z-index: 0; padding: 0px; min-height: 50px; min-width: 728px; position: sticky !important; top: 0px !important;" 
-    class="ezoic-ad ezads-sticky-intradiv ezfound" data-google-query-id="CM-yy4an7YUDFX_5_QUdxHcB4w"><div id="google_ads_iframe_/1254144,5336692/thecalculatorsite_com-box-2_0__container__" 
-    style="border: 0pt none;"><iframe id="google_ads_iframe_/1254144,5336692/thecalculatorsite_com-box-2_0" 
-    name="google_ads_iframe_/1254144,5336692/thecalculatorsite_com-box-2_0" title="3rd party ad content" width="1" height="1" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" aria-label="Advertisement" 
-    tabindex="0" allow="attribution-reporting" style="border: 0px; vertical-align: bottom; width: 728px; height: 90px;" data-google-container-id="9" data-load-complete="true"></iframe></div></span></span></span><ul 
-    class="tabs2 fourtabs tabsLineDesktop"><li id="tab1" class="active"><span>Compound Interest</span></li><li id="tab2"><a href="/finance/calculators/simple-interest-calculator.php">Simple Interest</a></li><li id="tab3"><a href="/finance/calculators/daily-compound-interest.php" 
-        title="Daily Compound Interest">Daily Compound</a></li><li id="tab4"><a href="/finance/calculators/forex-compound-calculator.php" title="Forex Compounding">Forex Compound</a></li></ul></div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="conpound.css"></script>
+ 
+
+    <style>
+        /* Add your custom styles here */
+        .calculator-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+
+        .heading {
+            font-weight: bold;
+        }
+
+        .currSymbol {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .radio-switch input[type="radio"] {
+            margin-right: 5px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Compound Interest calculator</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            
+        </ul>
+    </div>
+</nav>
+
+  <!-- End of navbar -->
+
+    <!-- Calculator Container -->
+    <div class="container calculator-container mt-5">
+        <form method="post" name="form1" id="compoundcalc" accept-charset="iso-8859-1" action="compoundinterestcalculator.php#ScrollTo" onsubmit="return processCalc(this,0);" autocomplete="off">
+            <!-- Currency Selection -->
+            <div id="currencyBox" class="form-group">
+                <label class="heading">Currency:</label>
+                <div class="radio-switch">
+                    <input type="radio" id="radio-one" name="currency" value="dollar" checked>
+                    <label for="radio-one">$</label>
+                    <input type="radio" id="radio-two" name="currency" value="euro">
+                    <label for="radio-two">€</label>
+                    <input type="radio" id="radio-three" name="currency" value="pound">
+                    <label for="radio-three">£</label>
+                    <input type="radio" id="radio-four" name="currency" value="rupee">
+                    <label for="radio-four">₹</label>
+                    <input type="radio" id="radio-five" name="currency" value="yen">
+                    <label for="radio-five">¥</label>
+                    <input type="radio" id="radio-six" name="currency" value="none">
+                    <label for="radio-six">&nbsp;</label>
+                </div>
+            </div>
+            <!-- Initial Investment -->
+            <div class="form-group">
+                <label class="heading" for="amount">Initial investment:</label>
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                        <span class="input-group-text currSymbol">$</span>
+                    </span>
+                    <input type="number" step="any" name="amount" id="amount" value="5000" class="form-control" required>
+                </div>
+            </div>
+            <!-- Interest Rate -->
+            <div class="form-group">
+                <label class="heading" for="percent">Interest rate:</label>
+                <div class="input-group">
+                    <input type="number" step="any" name="percent" id="percent" value="5" class="form-control" required>
+                    <select name="percentPeriod" class="form-control">
+                        <option value="daily">daily</option>
+                        <option value="weekly">weekly</option>
+                        <option value="monthly">monthly</option>
+                        <option value="quarterly">quarterly</option>
+                        <option value="yearly" selected>yearly</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Additional Contributions -->
+            <!-- Add other form elements here -->
+            <button type="submit" class="btn btn-primary">Calculate</button>
+            <!-- Compound Interval -->
+            <div class="form-group">
+                <label class="heading" for="calculateinterest">Compound interval:</label>
+                <select name="calculateinterest" id="calculateinterest" required class="form-control">
+                    <option value="daily">Daily (365/yr)</option>
+                    <option value="daily360">Daily (360/yr)</option>
+                    <option value="semiweekly">Semi-Weekly (104/yr)</option>
+                    <option value="weekly">Weekly (52/yr)</option>
+                    <option value="biweekly">Bi-Weekly (26/yr)</option>
+                    <option value="halfmonthly">Semi-Monthly (24/yr)</option>
+                    <option value="monthly" selected>Monthly (12/yr)</option>
+                    <option value="bimonthly">Bi-Monthly (6/yr)</option>
+                    <option value="quarterly">Quarterly (4/yr)</option>
+                    <option value="halfyearly">Half-Yearly (2/yr)</option>
+                    <option value="yearly">Yearly (1/yr)</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="compound.js"></script>
+
+</body>
+
+</html>

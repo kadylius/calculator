@@ -1,0 +1,22 @@
+ /* Add your custom styles here */
+ .calculator-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.heading {
+    font-weight: bold;
+}
+
+.currSymbol {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.radio-switch input[type="radio"] {
+    margin-right: 5px;
+}
